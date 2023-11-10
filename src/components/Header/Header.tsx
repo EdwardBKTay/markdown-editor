@@ -8,10 +8,10 @@ const Button: React.FC<{ label: string; onClick: () => void }> = ({
 
 interface HeaderProps {
 	handleClick: (value: string, repeat: number) => void;
-	handleSubmit: () => void;
+	saveFile: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ handleClick, handleSubmit }) => {
+const Header: React.FC<HeaderProps> = ({ handleClick, saveFile }) => {
 	const buttons = [
 		{ label: 'B', value: '**', repeat: 2 },
 		{ label: 'I', value: '_', repeat: 2 },
@@ -22,7 +22,6 @@ const Header: React.FC<HeaderProps> = ({ handleClick, handleSubmit }) => {
 		{ label: 'Quote', value: '> ', repeat: 1 },
 		{ label: 'Code', value: '`', repeat: 2 },
 		{ label: 'Block Code', value: '```', repeat: 2 },
-		{ label: 'Images Link', value: 'hello', repeat: 2 },
 	];
 
 	return (
@@ -34,9 +33,7 @@ const Header: React.FC<HeaderProps> = ({ handleClick, handleSubmit }) => {
 					onClick={() => handleClick(button.value, button.repeat)}
 				/>
 			))}
-			<button type="submit" onClick={handleSubmit}>
-				Submit
-			</button>
+			<button onClick={saveFile}>Save File</button>
 		</div>
 	);
 };
