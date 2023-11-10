@@ -1,15 +1,26 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import MarkdownEditor from './components/Markdown-Editor/Markdown';
 import Preview from './components/Preview/Preview';
 import Header from './components/Header/Header';
 import './App.css';
 
 export default function App() {
-	const [markdown, setMarkdown] = useState('');
+	const [markdown, setMarkdown] = useState(
+		localStorage.getItem('markdown') ?? ''
+	);
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+	useEffect(() => {
+		localStorage.setItem('markdown', markdown);
+	}, [markdown]);
 
 	const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		setMarkdown(event.target.value);
+	};
+
+	const handleSubmit = () => {
+		console.log(markdown);
+		setMarkdown('');
 	};
 
 	const handleClick = (symbol: string, repeat: number) => {
@@ -43,7 +54,7 @@ export default function App() {
 
 	return (
 		<div className="app">
-			<Header handleClick={handleClick} />
+			<Header handleClick={handleClick} handleSubmit={handleSubmit} />
 			<div className="container">
 				<MarkdownEditor
 					handleChange={handleChange}

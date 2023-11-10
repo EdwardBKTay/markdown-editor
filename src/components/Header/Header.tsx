@@ -8,13 +8,14 @@ const Button: React.FC<{ label: string; onClick: () => void }> = ({
 
 interface HeaderProps {
 	handleClick: (value: string, repeat: number) => void;
+	handleSubmit: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ handleClick }) => {
+const Header: React.FC<HeaderProps> = ({ handleClick, handleSubmit }) => {
 	const buttons = [
 		{ label: 'B', value: '**', repeat: 2 },
 		{ label: 'I', value: '_', repeat: 2 },
-		{ label: 'Link', value: '()[url]', repeat: 1 },
+		{ label: 'Link', value: '[](url)', repeat: 1 },
 		{ label: 'Ordered List', value: '1. ', repeat: 1 },
 		{ label: 'Unordered List', value: '- ', repeat: 1 },
 		{ label: 'Heading', value: '## ', repeat: 1 },
@@ -33,6 +34,9 @@ const Header: React.FC<HeaderProps> = ({ handleClick }) => {
 					onClick={() => handleClick(button.value, button.repeat)}
 				/>
 			))}
+			<button type="submit" onClick={handleSubmit}>
+				Submit
+			</button>
 		</div>
 	);
 };

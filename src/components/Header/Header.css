@@ -7,3 +7,15 @@
 	display: flex;
 	gap: 1rem;
 }
+
+.header button {
+	background-color: transparent;
+	color: #9ca3af;
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.header button:hover {
+	background-color: #374151;
+	color: whitesmoke;
+}

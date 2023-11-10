@@ -56,26 +56,10 @@
 	padding-bottom: 0.75rem;
 }
 
-/* Style inline code */
-.preview code {
-	background-color: #f1f1f1;
-	padding: 2px 4px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-family: 'Consolas', monospace;
-	font-size: 14px;
-	color: #333;
-}
-
-.preview pre {
-	background-color: #f1f1f1;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-family: monospace;
-	font-size: 14px;
-	color: #333;
-	white-space: pre-wrap;
+.pre {
+	background-color: rgb(28, 27, 27);
+	padding: 0.5em;
+	color: rgb(255, 255, 255);
 	overflow-x: auto;
-	margin-top: 1em;
+	display: block;
 }
