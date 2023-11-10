@@ -29,6 +29,7 @@ export default function App() {
 
 		const blob = new Blob([markdown], { type: 'text/plain;charset=utf-8' });
 		FileSaver.saveAs(blob, fileName);
+		setMarkdown('');
 	};
 
 	const handleClick = (symbol: string, repeat: number) => {
