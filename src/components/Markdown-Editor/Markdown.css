@@ -1,0 +1,7 @@
+.markdown-editor {
+	width: 50%;
+	height: 100vh;
+	resize: none;
+	padding: 1rem;
+	overflow: auto;
+}
